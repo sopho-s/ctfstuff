@@ -24,10 +24,11 @@
         <p>
           <?php
             if (isset($_GET["website"])) {
-                if (true) {
-                  print shell_exec("ping -c 1 " . $_GET["website"] . " 2>&1");
+                $output = shell_exec("timeout 2 ping -c 1 " . $_GET["website"] . " 2>&1");
+                if($output.contains("1 received")) {
+                  print "The website is up!";
                 } else {
-                  print "command not allowed";
+                  print "The website is down!";
                 }
             }
         ?>
