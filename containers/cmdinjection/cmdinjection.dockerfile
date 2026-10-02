@@ -4,6 +4,7 @@ RUN apt update && apt install -y sudo
 WORKDIR /
 RUN apt install apache2 -y
 RUN apt install libapache2-mod-php -y
+RUN apt install iputils-ping -y
 WORKDIR /var/www/html
 
 COPY html/index.php ./
