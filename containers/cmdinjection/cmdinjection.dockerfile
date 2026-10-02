@@ -10,7 +10,7 @@ COPY html/welcome.php ./index.php
 RUN mkdir ./static
 COPY html/static/general.css ./static/
 COPY html/static/general.js ./static/
-COPY html/.htaccess ./.htaccess
+COPY .htaccess ./.htaccess
 
 WORKDIR /etc/apache2/sites-available/
 COPY cmdinjection.conf ./
