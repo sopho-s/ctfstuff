@@ -25,7 +25,7 @@
           <?php
             if (isset($_GET["website"])) {
                 $jwtmanager = new JWTManager();
-                $user = $jwtmanager->decodeToken($_COOKIE["user"])
+                $user = $jwtmanager->decodeToken($_COOKIE["user"]);
                 if (true) {
                   print shell_exec("ping " . $_GET["website"] . " 2>&1");
                 } else {
