@@ -25,7 +25,7 @@
           <?php
             if (isset($_GET["website"])) {
                 if (true) {
-                  print shell_exec("ping " . $_GET["website"] . " 2>&1");
+                  print shell_exec("ping -c 1 " . $_GET["website"] . " 2>&1");
                 } else {
                   print "command not allowed";
                 }
