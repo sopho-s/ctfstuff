@@ -1,0 +1,15 @@
+FROM ubuntu:latest
+RUN apt update && apt install -y sudo
+
+RUN apt install python3 -y
+RUN pip install flask -y
+
+COPY main.py ./
+RUN mkdir ./html/
+COPY html/index.html ./html/
+RUN mkdir ./html/static
+COPY html/static/general.css ./html/static/
+
+EXPOSE 80
+
+CMD ["flask", "--app", "main", "run"]
