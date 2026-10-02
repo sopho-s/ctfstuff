@@ -13,7 +13,7 @@ def vulnerable():
     name = request.args.get('name', 'unknown')
     template = f'''<html>
                 <head>
-                    <title>Is it down?</title>
+                    <title>welcome</title>
                     <link rel="stylesheet" href="static/general.css" />
                     <script src="static/general.js "></script>
                 </head>
