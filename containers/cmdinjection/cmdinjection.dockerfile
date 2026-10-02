@@ -1,0 +1,22 @@
+FROM ubuntu:latest
+RUN apt update && apt install -y sudo
+
+WORKDIR /
+RUN apt install apache2 -y
+RUN apt install libapache2-mod-php -y
+WORKDIR /var/www/html
+
+COPY html/welcome.php ./index.php
+RUN mkdir ./static
+COPY html/static/general.css ./static/
+COPY html/static/general.js ./static/
+
+WORKDIR /etc/apache2/sites-available/
+COPY cmdinjection.conf ./
+RUN a2ensite cmdinjection.conf
+RUN a2dissite 000-default.conf
+RUN a2enmod rewrite
+EXPOSE 80
+EXPOSE 1234
+
+CMD ["apachectl", "-D", "FOREGROUND"]
