@@ -13,4 +13,4 @@ COPY html/static/general.css ./html/static/
 
 EXPOSE 80
 
-CMD ["flask", "--app", "main", "run"]
+CMD ["flask", "--app", "main", "run", "-p", "80"]
