@@ -2,6 +2,7 @@ FROM ubuntu:latest
 RUN apt update && apt install -y sudo
 
 RUN apt install python3 -y
+RUN apt install python3-pip -y
 RUN pip install flask -y
 
 COPY main.py ./
