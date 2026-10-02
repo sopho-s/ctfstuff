@@ -1,13 +1,9 @@
-<!doctype html>
 <html>
   <head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <title>Is it down?</title>
     <link rel="stylesheet" href="static/general.css" />
-    <script src="https://cdn.jsdelivr.net/npm/js-cookie/src/js.cookie.js"></script>
     <script src="static/general.js "></script>
   </head>
-
   <body>
     <div class="center base">
       <div class="top-down card center-rows">
@@ -15,7 +11,7 @@
         <form
           class="center-rows top-down space-between"
           style="gap: 10px"
-          id="ping"
+          id="ping" 
         >
           <input
             class="form-text"
