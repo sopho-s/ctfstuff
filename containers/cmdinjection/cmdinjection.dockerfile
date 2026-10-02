@@ -6,7 +6,8 @@ RUN apt install apache2 -y
 RUN apt install libapache2-mod-php -y
 WORKDIR /var/www/html
 
-COPY html/welcome.php ./index.php
+COPY html/index.php ./
+COPY html/index.html ./
 RUN mkdir ./static
 COPY html/static/general.css ./static/
 COPY html/static/general.js ./static/
